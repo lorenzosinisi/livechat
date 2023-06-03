@@ -307,7 +307,7 @@ defmodule LivechatWeb.ChatLive.Components.Sidebar do
                 class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
               >
                 <.user_circle_icon class="h-3 w-3" />
-                <span>Sean Moriarity</span>
+                <span>username</span>
               </a>
             </li>
           </ul>
@@ -416,4 +416,3 @@ defmodule LivechatWeb.ChatLive.Components.Sidebar do
     """
   end
 end
-

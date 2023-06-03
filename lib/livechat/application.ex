@@ -20,7 +20,10 @@ defmodule Livechat.Application do
       LivechatWeb.Endpoint,
       # Start a worker by calling: Livechat.Worker.start_link(arg)
       # {Livechat.Worker, arg}
-      {Nx.Serving, serving: LiveChat.Model.serving(), name: LiveChat.Serving, batch_timeout: 100}
+      {Nx.Serving,
+       serving: LiveChat.Model.FlanT5Base.serving(),
+       name: LiveChat.Model.FlanT5Base.Serving,
+       batch_timeout: 100}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
