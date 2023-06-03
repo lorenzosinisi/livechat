@@ -7,7 +7,8 @@ defmodule LivechatWeb.ChatLive.Index do
   alias LivechatWeb.ChatLive.Components.Message
 
   @models %{
-    "Flan-t5-base" => "google/flan-t5-base"
+    "Flan-t5-base" => "google/flan-t5-base",
+    "Flan-t5-xxl" => "google/flan-t5-xxl"
   }
 
   @initial_messages []
