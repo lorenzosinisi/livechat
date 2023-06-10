@@ -23,11 +23,11 @@ defmodule Livechat.Application do
       {Nx.Serving,
        serving: LiveChat.Model.FlanT5Base.serving(),
        name: LiveChat.Model.FlanT5Base.Serving,
-       batch_timeout: 100},
-      {Nx.Serving,
-       serving: LiveChat.Model.FlanT5Large.serving(),
-       name: LiveChat.Model.FlanT5Large.Serving,
        batch_timeout: 100}
+      # {Nx.Serving,
+      #  serving: LiveChat.Model.FlanT5Large.serving(),
+      #  name: LiveChat.Model.FlanT5Large.Serving,
+      #  batch_timeout: 100}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
