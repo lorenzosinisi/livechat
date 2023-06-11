@@ -7,11 +7,17 @@ defmodule LivechatWeb.ChatLive.Index do
   alias LivechatWeb.ChatLive.Components.Message
   alias LivechatWeb.ChatLive.Components.Form
 
-  @models %{
-    "Google - Flan-t5-base" => "google/flan-t5-base",
-    "Google - Flan-t5-large" => "google/flan-t5-large",
-    "Google - Flan-t5-xl" => "flan-t5-xl"
-  }
+  @mods :livechat
+        |> Application.compile_env!(LiveChat.Model)
+        |> Keyword.fetch!(:models)
+        |> Map.keys()
+
+  @models @mods
+          |> Enum.map(fn str ->
+            String.split(str, "/") |> Enum.join(" - ") |> Phoenix.Naming.humanize()
+          end)
+          |> Enum.zip(@mods)
+          |> Enum.into(Map.new())
 
   @initial_messages []
 
@@ -20,7 +26,7 @@ defmodule LivechatWeb.ChatLive.Index do
     socket =
       socket
       |> assign(:models, @models)
-      |> assign(:selected_model, "Google - Flan-t5-base")
+      |> assign(:selected_model, "Google - flan-t5-base")
       |> assign(:history, @initial_messages)
       |> assign(:task, nil)
       |> assign(:form_size, 24)
@@ -76,7 +82,7 @@ defmodule LivechatWeb.ChatLive.Index do
     message = contents
     role = :user
     new_item = %{role: role, id: new_id, message: message}
-    current_model = @models[socket.assigns.selected_model]
+    current_model = Map.fetch!(@modelssocket, socket.assigns.selected_model)
 
     task =
       Task.async(fn ->

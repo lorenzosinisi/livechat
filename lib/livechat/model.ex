@@ -5,11 +5,7 @@ defmodule LiveChat.Model do
     @callback generate(text :: String.t()) :: binary()
   end
 
-  @allowed_models %{
-    "google/flan-t5-base" => __MODULE__.FlanT5Base,
-    "google/flan-t5-large" => __MODULE__.FlanT5Large
-    # "google/flan-t5-xl" => __MODULE__.FlanT5XL
-  }
+  @allowed_models Application.compile_env(:livechat, LiveChat.Model)[:models]
 
   def list_models, do: @allowed_models
 
