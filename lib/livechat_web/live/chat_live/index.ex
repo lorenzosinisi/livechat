@@ -82,7 +82,7 @@ defmodule LivechatWeb.ChatLive.Index do
     message = contents
     role = :user
     new_item = %{role: role, id: new_id, message: message}
-    current_model = Map.fetch!(@modelssocket, socket.assigns.selected_model)
+    current_model = Map.fetch!(@models, socket.assigns.selected_model)
 
     task =
       Task.async(fn ->

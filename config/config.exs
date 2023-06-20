@@ -12,8 +12,8 @@ config :livechat,
 
 config :livechat, LiveChat.Model,
   models: %{
-    "google/flan-t5-base" => LiveChat.Model.FlanT5Base,
-    "google/flan-t5-large" => LiveChat.Model.FlanT5Large
+    "google/flan-t5-base" => LiveChat.Model.FlanT5Base
+    # "google/flan-t5-large" => LiveChat.Model.FlanT5Large
   }
 
 # Configures the endpoint
