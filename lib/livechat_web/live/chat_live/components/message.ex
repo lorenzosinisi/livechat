@@ -14,9 +14,10 @@ defmodule LivechatWeb.ChatLive.Components.Message do
       ]}
     >
       <div class="markdown prose max-w-2xl mx-auto p-4">
-        <p>Hello *world*</p>
+        <p><%= @message %></p>
       </div>
     </div>
     """
   end
 end
+

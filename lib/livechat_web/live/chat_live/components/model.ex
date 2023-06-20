@@ -21,7 +21,7 @@ defmodule LivechatWeb.ChatLive.Components.Model do
         aria-labelledby="listbox-label"
       >
         <span class="inline-flex w-full truncate">
-          <%= @models[@selected_model] %>
+          <%= Map.fetch!(@models, @selected_model) %>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
           <.chevron_down_icon class="h-4 w-4" />
@@ -60,7 +60,7 @@ defmodule LivechatWeb.ChatLive.Components.Model do
       Highlighted: "bg-indigo-600 text-white", Not Highlighted: "text-gray-900"
     -->
     <li
-      phx-click={"change_selected_model"}
+      phx-click="change_selected_model"
       phx-value-model={@model}
       class={[
         @selected? && "bg-gray-200",
@@ -73,7 +73,6 @@ defmodule LivechatWeb.ChatLive.Components.Model do
         <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
         <span class="font-normal"><%= @description %></span>
       </div>
-
       <!--
         Checkmark, only display for selected option.
 
@@ -91,7 +90,11 @@ defmodule LivechatWeb.ChatLive.Components.Model do
   defp checkmark_icon(assigns) do
     ~H"""
     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-      <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+      <path
+        fill-rule="evenodd"
+        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+        clip-rule="evenodd"
+      />
     </svg>
     """
   end
@@ -100,9 +103,17 @@ defmodule LivechatWeb.ChatLive.Components.Model do
 
   defp chevron_down_icon(assigns) do
     ~H"""
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={@class}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class={@class}
+    >
       <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
     """
   end
 end
+

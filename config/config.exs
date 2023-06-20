@@ -10,6 +10,12 @@ import Config
 config :livechat,
   ecto_repos: [Livechat.Repo]
 
+config :livechat, LiveChat.Model,
+  models: %{
+    "google/flan-t5-base" => LiveChat.Model.FlanT5Base
+    # "google/flan-t5-large" => LiveChat.Model.FlanT5Large
+  }
+
 # Configures the endpoint
 config :livechat, LivechatWeb.Endpoint,
   url: [host: "localhost"],
@@ -20,6 +26,7 @@ config :livechat, LivechatWeb.Endpoint,
   pubsub_server: Livechat.PubSub,
   live_view: [signing_salt: "bobXVfrv"]
 
+config :nx, default_backend: EXLA.Backend
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
