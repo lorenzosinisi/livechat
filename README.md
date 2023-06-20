@@ -90,3 +90,5 @@ There is no licence on this thing, no idea
 ---
 
 **Note:** The great https://twitter.com/sean_moriarity initially started this project ❤️ and it's a fork so the credit for a lot of this being possible goes to him, the Bumblebee team, and the entire Elixir team!
+
+**Another note** This README was initially written by ChatGPT from OpenAI instead LOL
