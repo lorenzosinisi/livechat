@@ -24,8 +24,8 @@ This is a pure Elixir application that serves as a ChatGPT clone using pre-train
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/your-username/elixir-chatgpt-clone.git](https://github.com/lorenzosinisi/livechat)
-cd elixir-chatgpt-clone
+git clone https://github.com/lorenzosinisi/livechat
+cd livechat
 ```
 
 2. Install dependencies:
