@@ -14,6 +14,17 @@ This is a pure Elixir application that serves as a ChatGPT clone using pre-train
 - Multi-model Support: The application is not limited to a specific version or type of model, allowing for easy integration with various Huggingface models.
 - Phoenix LiveView: The application utilizes Phoenix LiveView to provide real-time updates without requiring page reloads.
 
+## Deployment
+
+```bash
+# install fly https://fly.io, upgrade the machine memory (even the smallest model takes quite some space)
+fly scale vm shared-cpu-2x
+fly scale memory 4096
+# and have fun!
+fly deploy
+```
+
+
 ## Prerequisites
 
 - Elixir 1.12.2 or higher
