@@ -59,7 +59,7 @@ The application requires configuring the Huggingface model(s) to be used. To do 
 
 1. Open the `config/runtime.exs` file.
 
-2. Locate the `config :chatgpt_clone` section.
+2. Locate the `config :livechat` section.
 
 3. Update the `models` list with the desired Huggingface model names, API keys, and other relevant configuration options.
 
