@@ -4,6 +4,11 @@
 ![Phoenix](https://img.shields.io/badge/Phoenix-1.6.0-8751A1.svg?style=flat&logo=phoenix)
 ![Huggingface](https://img.shields.io/badge/Huggingface-4.9.1-2979FF.svg?style=flat&logo=huggingface)
 
+## Online demo
+
+https://tyfive.fly.dev
+
+
 This is a pure Elixir application that serves as a ChatGPT clone using pre-trained models from Huggingface. It utilizes the Phoenix LiveView framework to provide a dynamic and interactive user interface. Users can choose their favorite models from a dropdown list to interact with, and the application is not limited to GPT3 and GPT4 but can potentially run any model hosted on Huggingface's backend.
 
 ## Features
